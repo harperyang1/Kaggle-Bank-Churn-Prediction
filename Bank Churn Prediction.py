@@ -372,7 +372,8 @@ sns.barplot(x='Importance', y='Feature', data=coef_df[:20])
 # Adjust y-axis label font size and make title more readable
 plt.yticks(fontsize=12)  # Change the font size of y-axis labels
 plt.xticks(fontsize=12)  # Change x-axis font size too
-plt.title('Feature Importance in Logistic Regression', fontsize=14)  # Title font size
+plt.title('Top 20 Important Features in Logistic Regression (with Positive Impacts)', fontsize=14)  # Title font size
+plt.savefig('Top 20 Important Features in Logistic Regression (with Positive Impacts).png', bbox_inches='tight', dpi=300)
 plt.show()
 
 # Plotting the top 20 features having the greatest negative relationship with customer churn
@@ -381,5 +382,6 @@ sns.barplot(x='Importance', y='Feature', data=coef_df[-20:])
 # Adjust y-axis label font size and make title more readable
 plt.yticks(fontsize=12)  # Change the font size of y-axis labels
 plt.xticks(fontsize=12)  # Change x-axis font size too
-plt.title('Feature Importance in Logistic Regression', fontsize=14)  # Title font size
+plt.title('Top 20 Important Features in Logistic Regression (with Negative Impacts)', fontsize=14)  # Title font size
+plt.savefig('Top 20 Important Features in Logistic Regression (with Negative Impacts).png', bbox_inches='tight', dpi=300)
 plt.show()
