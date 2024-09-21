@@ -13,8 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v2
-      - name: Install Packages
-        run: make install
+     - name: Install Python and dependencies
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+        continue-on-error: true  # Add this for debugging
       - name: Format
         run: make format
       - name: Train
